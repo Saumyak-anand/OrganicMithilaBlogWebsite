@@ -20,14 +20,14 @@ import Silde3_7 from "../assets/sunday.jpg";
 const products = [
   {
     id: 1,
-    name: "Roasted Makhana",
+    name: "Premium Makhana",
     description:
       "Lightly roasted and salted, perfect for a healthy snack. A guilt-free treat for any time of the day.",
     images: [Slide1_1.src, Slide1_2.src, Slide1_3.src, Slide1_4.src],
   },
   {
     id: 2,
-    name: "Makhana Flakes",
+    name: "Flavoured Roasted Makhana",
     description:
       "Crispy and delicious, a great alternative to breakfast cereals. Mix with milk for a nutritious start to your day.",
     images: [
@@ -42,7 +42,7 @@ const products = [
   },
   {
     id: 3,
-    name: "Makhana Atta (Flour)",
+    name: "Achaar (Pickles)",
     description:
       "Finely ground Makhana flour, ideal for baking and cooking. A gluten-free way to enrich your meals.",
     images: [
