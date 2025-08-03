@@ -5,7 +5,6 @@ import third from "../assets/third.png";
 import fourth from "../assets/fourth.png";
 import fifth from "../assets/fifth.png";
 
-
 const journeySteps = [
   {
     id: 1,
@@ -57,7 +56,6 @@ export default function MakhanaJourney() {
         </p>
       </div>
 
-      
       <div className="mt-12 space-y-12 max-w-5xl mx-auto">
         {journeySteps.map((step, index) => (
           <div
@@ -66,7 +64,6 @@ export default function MakhanaJourney() {
               index % 2 === 0 ? "bg-gray-50" : "bg-gray-100"
             }`}
           >
-          
             <div
               className={`relative w-full md:w-1/2 rounded-xl overflow-hidden ${
                 index % 2 !== 0 ? "md:order-2" : ""
@@ -82,13 +79,12 @@ export default function MakhanaJourney() {
               />
             </div>
 
-        
             <div
               className={`text-left w-full md:w-1/2 ${
                 index % 2 !== 0 ? "md:order-1" : ""
               }`}
             >
-              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-indigo-100 text-indigo-700 font-bold text-lg mb-4">
+              <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-cyan-100 text-cyan-700 font-bold text-lg mb-4">
                 {step.id}
               </span>
               <h3 className="text-2xl font-bold text-gray-900 leading-tight">

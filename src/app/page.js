@@ -5,6 +5,8 @@ import About from "../components/About";
 import MakhanaJourney from "../components/MakhanaJourney.jsx";
 import Products from "../components/Products.jsx";
 import Contact from "../components/Contact";
+import Help from "../components/Help";
+import Footer from "../components/Footer";
 
 export default function Home() {
   return (
@@ -36,11 +38,15 @@ export default function Home() {
         <section id="products">
           <Products />
         </section>
+        <section id="help">
+          <Help />
+        </section>
 
         <section id="contact">
           <Contact />
         </section>
       </main>
+      <Footer />
     </div>
   );
 }

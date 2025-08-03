@@ -21,15 +21,17 @@ const products = [
   {
     id: 1,
     name: "Premium Makhana",
+    link: "https://mithilanaturals.com/collections/plain-makhana",
     description:
-      "Lightly roasted and salted, perfect for a healthy snack. A guilt-free treat for any time of the day.",
+      "Premium Quality Handpicked Makhana seeds straight from the ponds of Mithilanchal. A must delicacy during the months of fasting. A best healthy alternative gifting option during festivals.",
     images: [Slide1_1.src, Slide1_2.src, Slide1_3.src, Slide1_4.src],
   },
   {
     id: 2,
     name: "Flavoured Roasted Makhana",
+    link: "https://mithilanaturals.com/collections/roasted-makhana",
     description:
-      "Crispy and delicious, a great alternative to breakfast cereals. Mix with milk for a nutritious start to your day.",
+      "Crispy and delicious, with upto 7+ flavours, fit for food cravings for every day of the week. Ready to eat snacks for every occasion. Just open the seal & let the flavours burst in your mouth.",
     images: [
       Silde3_1.src,
       Silde3_2.src,
@@ -44,7 +46,7 @@ const products = [
     id: 3,
     name: "Achaar (Pickles)",
     description:
-      "Finely ground Makhana flour, ideal for baking and cooking. A gluten-free way to enrich your meals.",
+      "Tangy-chatpatta, our household favourite Achaar (pickles) in various flavours. No more need to wait for them to dry under the sunlight.Just pick one and start enjoying.",
     images: [
       Slide2_1.src,
       Slide2_2.src,
@@ -83,9 +85,13 @@ export default function Products() {
                 {product.name}
               </h3>
               <p className="mt-2 text-gray-600">{product.description}</p>
-              <button className="mt-4 inline-block px-6 py-2 text-md font-bold text-white bg-cyan-600 rounded-full shadow-lg hover:bg-cyan-700 transition-colors duration-300">
-                View Details
-              </button>
+              <div className="flex justify-center items-center">
+                <a href={product.link} target="_blank">
+                  <button className="mt-4 inline-block px-6 py-2 text-md font-bold text-white bg-cyan-600 rounded-full shadow-lg hover:bg-cyan-700 hover:cursor-pointer transition-colors duration-300">
+                    View Details
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         ))}
