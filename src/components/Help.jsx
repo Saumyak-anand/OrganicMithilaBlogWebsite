@@ -3,7 +3,6 @@ import React from "react";
 import Accordion from "./Accordion";
 
 const Help = () => {
-  // This array holds the data for your accordion
   const faqItems = [
     {
       title: "Where to purchase our products?",
