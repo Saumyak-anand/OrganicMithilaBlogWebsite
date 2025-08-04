@@ -2,30 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
-import { useInView } from "react-intersection-observer";
-
-
-const useActiveSection = (sectionIds) => {
-  const [activeSection, setActiveSection] = useState(null);
-
-
-  const sectionRefs = sectionIds.reduce((acc, id) => {
-    const { ref, inView } = useInView({ threshold: 0.5 });
-    acc[id] = { ref, inView };
-    return acc;
-  }, {});
-
-  useEffect(() => {
-    for (const id in sectionRefs) {
-      if (sectionRefs[id].inView) {
-        setActiveSection(id);
-        break;
-      }
-    }
-  }, [sectionRefs]);
-
-  return { activeSection, sectionRefs };
-};
+import styles from "../modules/navbar.module.css";
 
 export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -34,10 +11,10 @@ export default function Navbar() {
     { id: "about", title: "About" },
     { id: "makhana-journey", title: "Journey of Makhana" },
     { id: "products", title: "Products" },
+    { id: "help", title: "Help" },
     { id: "contact", title: "Contact" },
   ];
 
- 
   const [activeSection, setActiveSection] = useState("home");
 
   useEffect(() => {
@@ -46,7 +23,7 @@ export default function Navbar() {
       sections.forEach((section) => {
         const element = document.getElementById(section.id);
         if (element) {
-          const top = element.offsetTop - 100; // Offset to account for fixed navbar
+          const top = element.offsetTop - 100;
           const bottom = top + element.offsetHeight;
           if (scrollPosition >= top && scrollPosition < bottom) {
             setActiveSection(section.id);
@@ -64,7 +41,6 @@ export default function Navbar() {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-white shadow-lg backdrop-filter backdrop-blur-lg bg-opacity-80 transition-all duration-300">
       <div className="container mx-auto px-6 py-4 flex justify-between items-center">
-     
         <Link
           href="#home"
           className="text-3xl font-extrabold text-cyan-700 font-inter"
@@ -72,24 +48,25 @@ export default function Navbar() {
           Organic Mithila
         </Link>
 
-    
         <div className="hidden md:flex space-x-6">
           {sections.map((section) => (
             <Link
               key={section.id}
               href={`#${section.id}`}
-              className={`font-medium text-lg hover:text-cyan-800 transition-colors duration-300 ${
-                activeSection === section.id
-                  ? "text-cyan-700 font-extrabold"
-                  : "text-cyan-500 font-bold"
-              }`}
+              className={`font-medium text-lg hover:text-cyan-800 transition-colors duration-300
+                ${styles.underlineonhover}
+                ${
+                  activeSection === section.id
+                    ? `text-cyan-700 font-extrabold ${styles.underlineactive}`
+                    : "text-cyan-500 font-bold"
+                }
+              `}
             >
               {section.title}
             </Link>
           ))}
         </div>
 
-        
         <div className="md:hidden">
           <button
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -113,7 +90,6 @@ export default function Navbar() {
         </div>
       </div>
 
-     
       {isMobileMenuOpen && (
         <div className="md:hidden bg-white shadow-inner pb-4">
           <div className="flex flex-col space-y-2 px-6">

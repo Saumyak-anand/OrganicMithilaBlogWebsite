@@ -16,7 +16,7 @@ export default function About() {
         </div>
 
         <div className="text-left">
-          <h2 className="text-4xl font-extrabold text-cyan-700 leading-tight mb-4">
+          <h2 className="text-4xl font-extrabold text-cyan-700 leading-tight mb-4 text-center">
             Our Story: A Commitment to Purity
           </h2>
           <p className="mt-4 text-xl text-gray-600">

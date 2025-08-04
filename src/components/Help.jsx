@@ -17,7 +17,7 @@ const Help = () => {
     {
       title: "Why are our products expensive?",
       content:
-        "After the harvesting season, our products are handpicked from the ponds of Mithilanchal, each makhana weaving its own story of authenticity. The batch is examined carefully with 5-6 insepction checks to ensure that our customers recieve a healthy product. We also ensure that our customers recieve our products of Highest Quality. ",
+        "After the harvesting season, our products are handpicked from the ponds of Mithilanchal, each makhana weaving its own story of authenticity. The batch is examined carefully with 5-6 inspection checks to ensure that our customers recieve a healthy product. We also ensure that our customers recieve our products of Highest Quality. ",
     },
     {
       title: "Want to become our Retail partner?",
@@ -32,7 +32,7 @@ const Help = () => {
   ];
 
   return (
-    <div className="flex flex-col justify-center items-center">
+    <div id="help" className="flex flex-col justify-center items-center">
       <h2 className="text-4xl font-extrabold text-cyan-700 leading-tight mb-4">
         Have Any Questions?
       </h2>
