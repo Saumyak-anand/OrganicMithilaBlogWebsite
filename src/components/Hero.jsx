@@ -1,19 +1,18 @@
 "use client";
 import Link from "next/link";
 import Image from "next/image";
-import coverPage from "../assets/coverPage.jpg";
-import MithilaLogo from "../assets/mithilaLogo.png";
+import coverPage from "../../public/assets/coverPage.jpg";
+import MithilaLogo from "../../public/assets/mithilaLogo.png";
 
 export default function Hero() {
   return (
     <div className="relative h-screen flex items-center justify-center text-center overflow-hidden">
-
       <div className="absolute inset-0 z-0">
         <Image
           src={coverPage}
           alt="Mithila Makhana field"
-          layout="fill"
-          objectFit="cover"
+          fill
+          style={{ objectFit: "cover" }}
           quality={100}
           className="filter brightness-75"
         />

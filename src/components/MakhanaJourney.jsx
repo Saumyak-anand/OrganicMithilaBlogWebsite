@@ -1,9 +1,9 @@
 import Image from "next/image";
-import first from "../assets/first.png";
-import second from "../assets/second.png";
-import third from "../assets/third.png";
-import fourth from "../assets/fourth.png";
-import fifth from "../assets/fifth.png";
+import first from "../../public/assets/first.png";
+import second from "../../public/assets/second.png";
+import third from "../../public/assets/third.png";
+import fourth from "../../public/assets/fourth.png";
+import fifth from "../../public/assets/fifth.png";
 
 const journeySteps = [
   {
@@ -74,8 +74,8 @@ export default function MakhanaJourney() {
                 alt={step.title}
                 width={400}
                 height={300}
-                layout="responsive"
-                className="rounded-xl"
+                sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                className="rounded-xl w-full h-auto"
               />
             </div>
 

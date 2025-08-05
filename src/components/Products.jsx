@@ -1,21 +1,21 @@
 import Image from "next/image";
 import Slideshow from "./Slideshow";
-import Slide1_1 from "../assets/Slide1_1.jpg";
-import Slide1_2 from "../assets/Slide1_2.jpg";
-import Slide1_3 from "../assets/Slide1_3.jpg";
-import Slide1_4 from "../assets/Slide1_4.jpg";
-import Slide2_1 from "../assets/Slide2_1.jpg";
-import Slide2_2 from "../assets/Slide2_2.jpg";
-import Slide2_3 from "../assets/Slide2_3.jpg";
-import Slide2_4 from "../assets/Slide2_4.jpg";
-import Slide2_5 from "../assets/Slide2_5.jpg";
-import Silde3_1 from "../assets/monday.jpg";
-import Silde3_2 from "../assets/tuesday.jpg";
-import Silde3_3 from "../assets/wednesday.jpg";
-import Silde3_4 from "../assets/thursday.jpg";
-import Silde3_5 from "../assets/friday.jpg";
-import Silde3_6 from "../assets/saturday.jpg";
-import Silde3_7 from "../assets/sunday.jpg";
+import Slide1_1 from "../../public/assets/Slide1_1.jpg";
+import Slide1_2 from "../../public/assets/Slide1_2.jpg";
+import Slide1_3 from "../../public/assets/Slide1_3.jpg";
+import Slide1_4 from "../../public/assets/Slide1_4.jpg";
+import Slide2_1 from "../../public/assets/Slide2_1.jpg";
+import Slide2_2 from "../../public/assets/Slide2_2.jpg";
+import Slide2_3 from "../../public/assets/Slide2_3.jpg";
+import Slide2_4 from "../../public/assets/Slide2_4.jpg";
+import Slide2_5 from "../../public/assets/Slide2_5.jpg";
+import Slide3_1 from "../../public/assets/monday.jpg";
+import Slide3_2 from "../../public/assets/tuesDay.jpg";
+import Slide3_3 from "../../public/assets/wednesday.jpg";
+import Slide3_4 from "../../public/assets/thursday.jpg";
+import Slide3_5 from "../../public/assets/friday.jpg";
+import Slide3_6 from "../../public/assets/saturday.jpg";
+import Slide3_7 from "../../public/assets/sunday.jpg";
 
 const products = [
   {
@@ -25,6 +25,12 @@ const products = [
     description:
       "Premium Quality Handpicked Makhana seeds straight from the ponds of Mithilanchal. A must delicacy during the months of fasting. A best healthy alternative gifting option during festivals.",
     images: [Slide1_1.src, Slide1_2.src, Slide1_3.src, Slide1_4.src],
+    nameMakhana: [
+      "Shri Makhana",
+      "Premium Mithila Makhana",
+      "Mithila Makhana",
+      "Madhubani Makhana",
+    ],
   },
   {
     id: 2,
@@ -33,13 +39,22 @@ const products = [
     description:
       "Crispy and delicious, with upto 7+ flavours, fit for food cravings for every day of the week. Ready to eat snacks for every occasion. Just open the seal & let the flavours burst in your mouth.",
     images: [
-      Silde3_1.src,
-      Silde3_2.src,
-      Silde3_3.src,
-      Silde3_4.src,
-      Silde3_5.src,
-      Silde3_6.src,
-      Silde3_7.src,
+      Slide3_1.src,
+      Slide3_2.src,
+      Slide3_3.src,
+      Slide3_4.src,
+      Slide3_5.src,
+      Slide3_6.src,
+      Slide3_7.src,
+    ],
+    nameMakhana: [
+      "Cream & Onion",
+      "Peri-Peri",
+      "Mint Munch",
+      "Cheese & Herbs",
+      "Fasting Makhana",
+      "Barbeque Balls",
+      "Thai Chilli",
     ],
   },
   {
@@ -53,6 +68,13 @@ const products = [
       Slide2_3.src,
       Slide2_4.src,
       Slide2_5.src,
+    ],
+    nameMakhana: [
+      "Amle Ka Achaar",
+      "Bharwan Mirch ka Achaar",
+      "Dal Ka Achaar",
+      "Aam Ka Achaar",
+      "Hari Mirch Ka Achaar",
     ],
   },
 ];
@@ -77,11 +99,15 @@ export default function Products() {
             className="bg-white rounded-2xl shadow-xl overflow-hidden p-6 transition-all duration-300 transform hover:scale-105 hover:shadow-2xl"
           >
             <div className="relative w-full h-64 rounded-xl overflow-hidden">
-              <Slideshow images={product.images} interval={2000} />
+              <Slideshow
+                images={product.images}
+                name={product.nameMakhana}
+                interval={2000}
+              />
             </div>
 
             <div className="mt-6">
-              <h3 className="text-xl font-bold text-gray-900 leading-tight">
+              <h3 className="text-xl font-extrabold text-cyan-700 leading-tight text-center underline">
                 {product.name}
               </h3>
               <p className="mt-2 text-gray-600">{product.description}</p>

@@ -1,17 +1,18 @@
 import Image from "next/image";
-import aboutImage from "../assets/aboutImage.jpg";
+import aboutImage from "../../public/assets/aboutImage.jpg";
 
 export default function About() {
   return (
     <div className="bg-gray-50 py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
-        <div className="relative rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
+        {/* The parent div is now `relative` and has a fixed height */}
+        <div className="relative h-96 rounded-xl overflow-hidden shadow-2xl transform hover:scale-105 transition-transform duration-300">
           <Image
-            src={aboutImage.src}
+            src={aboutImage}
             alt="About us organic farming"
-            width={800}
-            height={600}
-            objectFit="cover"
+            fill
+            className="object-cover"
+            sizes="(max-width: 768px) 100vw, 50vw"
           />
         </div>
 

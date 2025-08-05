@@ -5,6 +5,7 @@ import Image from "next/image";
 
 const Slideshow = (props) => {
   const images = props.images;
+  const name = props.name;
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -26,18 +27,34 @@ const Slideshow = (props) => {
   return (
     <div style={{ textAlign: "center" }}>
       <div className="flex justify-center items-center">
-        <Image
-          src={images[currentIndex]}
-          alt={`Slide ${currentIndex + 1}`}
-          width="225"
-          height="200"
-          style={{ objectFit: "cover" }}
-        />
+        <div className="flex flex-col justify-center items-center">
+          <div className="mb-{3px}">
+            <h2 className="font-extrabold text-cyan-600 text-2xl">
+              {name[currentIndex]}
+            </h2>
+          </div>
+          <div
+            style={{
+              position: "relative",
+              width: "200px", // Set the width on the parent
+              height: "200px", // Set the height on the parent
+            }}
+          >
+            <Image
+              src={images[currentIndex]}
+              alt={`Slide ${currentIndex + 1}`}
+              fill // This makes the image fill the parent
+              style={{ objectFit: "contain" }} // This scales the image to fit without cropping
+              sizes="(max-width: 768px) 100vw, 50vw" // Add sizes for best performance
+              priority
+            />
+          </div>
+        </div>
       </div>
 
-      <div style={{ marginTop: "10px" }}>
-        <button onClick={goToPrev}>⏮️ Previous</button>
-        <button onClick={goToNext}>Next ⏭️</button>
+      <div style={{ marginTop: "5px" }}>
+        <button onClick={goToPrev}>⏮️</button>
+        <button onClick={goToNext}>⏭️</button>
       </div>
     </div>
   );
